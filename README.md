@@ -28,3 +28,7 @@ In Step 5, the new AMF will register itself with the UDM, saying that I am the n
 In step 6, AMF needs to know the necessary policies related to access and mobility management. So it goes to PCF and fetches the necessary policy information corresponding to that particular device that is undergoing registration and the PCF provide the corresponding response. 
 
 In step 7, if there is already an existing PDU session, then the AMF speaks to the SMF to continue the PDU session using the update as some context message. On the other hand, if there is some kind of mismatch in understanding of what PDU session state is, then previous PDU session is terminated using the release session management context message and then a new PDU session is created if necessary. 
+
+In step 8, if registration procedure so far has gone good then the AMF will notify the device that the registration has been accepted and optionally, the device can send the confirmation saying that I have received the registration acceptance and registration complete message will be sent from device to the AMF. 
+
+In step 9, the AMF will contact with PCF for any device specific policies. Since there are some policies that help the device decisions. For example, the device might have to decide for a specific application if it has to create a new PDU session and or not. If there are multiple Wi-Fi networks that are supported, which one should be the device prioritize to use in support with the 5G network. This kind of policies can now be fetched from PCF.
