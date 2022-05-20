@@ -14,3 +14,9 @@ First, power-on procedure is known as initial procedure. In addition it also hav
 First step in the registration procedure is the registration request. For example, when the device is turned-on, the device sends a registration request to RAN. Now the RAN has to forward that to the core network to the appropriate AMF. But how would RAN knows what is the appropriate AMF. Here there are two possibilities.
 
 In first scenario, if the device has already been communicating with 5G network, then it will have an identity assigned (GUTI). There is a temporary identifier as indication exactly which AMF the device has previously registered with. So using this to know which AMF, the device was previously communicating and through which RAN can forward the request to the corresponding AMF. 
+
+Second if there is no previous identity is available it means this is the first power on procedure. So the RAN looks at registration request and the registration request as slice identifier (NSSAI). Then based on this slice identifier for this particular network slice they can see, which AMF supports network slice and forward the registration request to this corresponding AMF. 
+
+Once that registration request is forwarded AMF. We have context transfer as a next step. Let us assume the registration request is because of mobility. So the device is moved to a new region and trying to do a registration update and as the result it is trying to connect to the new AMF. But because this is the mobility triggered process, the device already has the UE context established with the old AMF. So in such situation, in Step 2 where the AMF contact with the old AMF for transferring the UE context and then the old AMF respond by communicating and transmitting the UE context to the new AMF. 
+
+Now the step 3 is authentication, which carried out using the 5G authentication and key agreement procedures. So the third step is related to authentication and security. 
