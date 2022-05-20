@@ -11,6 +11,8 @@ First, power-on procedure is known as initial procedure. In addition it also hav
 
 **Registration Procedure Call Flows**
 
+![](/Registration_procedure2.drawio.png)
+
 First step in the registration procedure is the registration request. For example, when the device is turned-on, the device sends a registration request to RAN. Now the RAN has to forward that to the core network to the appropriate AMF. But how would RAN knows what is the appropriate AMF. Here there are two possibilities.
 
 In first scenario, if the device has already been communicating with 5G network, then it will have an identity assigned (GUTI). There is a temporary identifier as indication exactly which AMF the device has previously registered with. So using this to know which AMF, the device was previously communicating and through which RAN can forward the request to the corresponding AMF. 
